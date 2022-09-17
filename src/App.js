@@ -25,17 +25,18 @@ function App() {
   };
 
   const currentCard = cards[index];
-  const author = currentCard.author;
-  const src = currentCard.img;
+
+  const { author, img, description } = currentCard;
 
   return (
     <div className="App">
       <div>
         {author}
         <div className="image" style={{ height: IMAGE_HEIGHT }}>
-          <img src={src} alt={author} />
+          <img src={img} alt={author} />
         </div>
       </div>
+      {description}
       <div>
         <button onClick={onButtonClickPrev}>prev</button>
         <button onClick={onButtonClickNext}>next</button>
