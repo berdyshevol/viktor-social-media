@@ -11,6 +11,7 @@ function App() {
     const onButtonClickDecrease = () => {
         setCount((count) => count - 1)
     }
+
   return (
     <div className="App">
       <div>{count}</div>
