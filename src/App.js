@@ -1,7 +1,8 @@
 import "./App.css";
 import { useState } from "react";
-import { IMAGE_HEIGHT } from "./config";
 import { cards } from "./data";
+import Author from "./components/Author";
+import Photo from "./components/Photo";
 
 function App() {
   const [index, setIndex] = useState(0);
@@ -26,17 +27,14 @@ function App() {
 
   const currentCard = cards[index];
 
-  const { author, img, description } = currentCard;
+  const { author, img, description, like } = currentCard;
 
   return (
     <div className="App">
-      <div>
-        {author}
-        <div className="image" style={{ height: IMAGE_HEIGHT }}>
-          <img src={img} alt={author} />
-        </div>
-      </div>
+      <Author author={author} />
+      <Photo img={img} author={author} />
       {description}
+      {like ? "+" : "-"}
       <div>
         <button onClick={onButtonClickPrev}>prev</button>
         <button onClick={onButtonClickNext}>next</button>
