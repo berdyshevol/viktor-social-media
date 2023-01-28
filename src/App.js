@@ -29,7 +29,7 @@ function App() {
   const currentCard = cards[index];
 
   const { author, img, description, like } = currentCard;
-
+  console.log(description);
   return (
     <div className="App">
       <Author author={author} />
