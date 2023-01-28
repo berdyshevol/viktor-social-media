@@ -3,6 +3,7 @@ import { useState } from "react";
 import { cards } from "./data";
 import Author from "./components/Author";
 import Photo from "./components/Photo";
+import Caption from "./components/Caption";
 
 function App() {
   const [index, setIndex] = useState(0);
@@ -33,9 +34,9 @@ function App() {
     <div className="App">
       <Author author={author} />
       <Photo img={img} author={author} />
-      {description}
-      {like ? "+" : "-"}
-      <div>
+      <Caption description={description}/>
+      {like ? "   +" : "   -"}
+      <div className="navigation">
         <button onClick={onButtonClickPrev}>prev</button>
         <button onClick={onButtonClickNext}>next</button>
       </div>
